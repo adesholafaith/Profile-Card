@@ -142,6 +142,10 @@ ul.list {
 
 
 @media (max-width:720px){
+    .profile-flex {
+        height: 100vh;
+    }
+    
     article[data-testid="test-profile-card"] {
         display: flex;
         flex-direction: column;
@@ -156,4 +160,5 @@ ul.list {
     p.bio {
         margin: 0;
     }
+
 }
