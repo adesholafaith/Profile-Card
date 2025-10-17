@@ -142,23 +142,30 @@ ul.list {
 
 
 @media (max-width:720px){
-    .profile-flex {
-        height: 100vh;
-    }
-    
     article[data-testid="test-profile-card"] {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        padding: 20px 50px;
     }
 
+    figure img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 0;
+    }
+
+    .image-column {
+        gap: 0;
+    }
+   
     h2 {
         display: flex;
         justify-content: center;
     }
-
     p.bio {
         margin: 0;
     }
 
 }
+
