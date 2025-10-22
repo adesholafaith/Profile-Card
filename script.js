@@ -41,7 +41,6 @@ if (toggle && nav) {
 }
 
 
-
 const socialFocusAnnounce = () => {
   const nodes = Array.from(document.querySelectorAll('[data-testid^="test-user-social-"]'));
   if (nodes.length === 0) return;
@@ -199,4 +198,3 @@ document.addEventListener('DOMContentLoaded', () => {
   socialFocusAnnounce();
   setupContactForm();
 });
-

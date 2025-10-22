@@ -1,17 +1,14 @@
 :root {
-  --bg: #ffdcfc; /* page top gradient color */
-  --bg-2: #fda6f6; /* page bottom gradient color */
+  --bg: #ffdcfc; 
+  --bg-2: #fda6f6; 
   --card: #ffffff;
   --purple: #aa0bbe;
   --light-purple: #fda6f6;
   --grey: #424242;
   --text: #0f1724;
-  --muted: #64748b;
-  --danger: #b91c1c;
+  --error: #b91c1c;
   --glass: rgba(165, 14, 115, 0.08);
   --shadow: rgba(2, 6, 23, 0.06);
-
-  /* layout */
   --gap: 60px;
   --max-width: 1000px;
   --pad: 24px;
@@ -23,9 +20,8 @@
   padding: 0;
 }
 
-
 body {
-  min-height: 100vh; /* ensures background covers full viewport */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,11 +33,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* main container should grow to fill vertical space so the gradient doesn't "cut off" */
 main {
   width: 70%;
   max-width: var(--max-width);
-  /* flex: 1 0 auto; */
   background: var(--card);
   border-radius: 10px;
   padding: 40px;
@@ -49,39 +43,17 @@ main {
   border: 1px solid var(--light-purple);
 }
 
-/* ========== Accessibility helpers ========== */
-/* prefer focus-visible for keyboard users */
 :focus {
   outline: none;
 }
+
 :focus-visible {
   outline: 3px solid rgba(122, 60, 237, 0.9);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
-/* skip link (if you use one) */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.skip-link:focus,
-.skip-link:active {
-  left: 1rem;
-  top: 1rem;
-  width: auto;
-  height: auto;
-  padding: 0.5rem 0.75rem;
-  background: var(--purple);
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* ========== Navigation ========== */
+/* --- Navigation --- */
 header {
   width: 100%;
   margin-bottom: 1rem;
@@ -98,6 +70,7 @@ header {
   gap: 1rem;
   margin: 1rem 0;
 }
+
 .nav-link ul {
   display: flex;
   gap: 0.5rem;
@@ -108,9 +81,11 @@ header {
   margin-right: 5rem;
   text-transform: uppercase;
 }
+
 .nav-link ul li {
   display: inline-block;
 }
+
 .nav-link a {
   color: var(--purple);
   font-weight: 700;
@@ -119,13 +94,14 @@ header {
   border-radius: 8px;
   font-size: 16px;
 }
+
 .nav-link a:hover,
 .nav-link a:focus {
   box-shadow: 0 0 0 6px rgba(170, 11, 190, 0.06);
   background: rgba(170, 11, 190, 0.04);
 }
 
-/* ========== Profile card (home) ========== */
+/* --- Profile card (home) --- */
 .profile-flex {
   width: 100%;
   max-width: var(--max-width);
@@ -154,6 +130,7 @@ header {
 figure {
   margin: 0;
 }
+
 figure img {
   width: 160px;
   height: 160px;
@@ -165,7 +142,6 @@ figure img {
 }
 
 /* Name */
-h2[data-testid="test-user-name"],
 h2 {
   font-size: 1.25rem;
   text-transform: uppercase;
@@ -182,6 +158,7 @@ h2 {
   margin: 0;
   justify-content: center;
 }
+
 .social-nav a {
   display: inline-flex;
   align-items: center;
@@ -193,16 +170,18 @@ h2 {
   border: 1px solid transparent;
   font-size: 13px;
 }
+
 .social-nav a:hover,
 .social-nav a:focus {
   box-shadow: 0 0 0 6px rgba(170, 11, 190, 0.06);
 }
 
-/* Meta/time pill */
+/* Time pill */
 .meta-row {
   display: flex;
   justify-content: flex-end;
 }
+
 .time-pill {
   background: #f6f1f9;
   padding: 4px 8px;
@@ -221,13 +200,14 @@ h2 {
 .list-block {
   margin-top: 1rem;
 }
+
 ul.list {
   list-style: disc;
   padding-left: 20px;
   color: var(--grey);
 }
 
-/* ========== About page styles ========== */
+/* --- About page styles --- */
 .about-main {
   width: 100%;
   margin: 0 auto;
@@ -237,6 +217,7 @@ ul.list {
   border: 1px solid var(--light-purple);
   margin-bottom: 3rem;
 }
+
 .about-section {
   margin: 2rem 0;
   padding: 2rem;
@@ -245,6 +226,7 @@ ul.list {
   border: 1px solid var(--light-purple);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .about-section:hover,
 .about-section:focus-within {
   transform: scale(1.02);
@@ -261,7 +243,6 @@ ul.list {
   color: #334155;
 }
 
-/* head styles */
 h1 {
   text-align: center;
   color: var(--purple);
@@ -288,7 +269,6 @@ h3 {
   margin-top: 0.6rem;
 }
 
-/* ========== Contact form styles ========== */
 .contact {
   width: 100%;
   max-width: 720px;
@@ -305,6 +285,7 @@ h3 {
   font-weight: 700;
   color: var(--text);
 }
+
 .form-input {
   width: 100%;
   padding: 0.5rem 0.75rem;
@@ -313,24 +294,27 @@ h3 {
   background: #d1d5db70;
   font-size: 0.95rem;
 }
+
 .form-input:focus {
   box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.08);
   border-color: var(--purple);
   outline: none;
 }
+
 .name-wrapper {
   display: flex;
   flex-direction: row;
     gap: 0.6rem;
 }
+
 .name-wrapper .form-group {
   flex: 1;
 }
+
 .name {
   flex: 1;
 }
 
-/* buttons */
 .button {
   display: flex;
   justify-content: center;
@@ -359,13 +343,15 @@ h3 {
 
 /* errors & success */
 .error {
-  color: var(--danger);
+  color: var(--error);
   font-size: 0.9rem;
   min-height: 1.2rem;
   display: block;
 }
+
 .success {
   background: #fcecfd;
+  font-size: 0.9rem;
   color: var(--purple);
   padding: 0.6rem;
   border-radius: 8px;
@@ -373,12 +359,7 @@ h3 {
 }
 
 
-
-
-
-
-
-/* ========= Tablets (768px and below) ========= */
+/* --- Tablets (768px and below) --- */
 @media (max-width: 768px) {
   body {
     font-size: 0.95rem;
@@ -406,43 +387,40 @@ h3 {
     font-size: 1rem;
   }
 
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 50px;
+  }
 
-   .profile-card {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 50px;
-    }
+  figure img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0;
+  }
 
-    figure img {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 0;
-    }
-
-    .image-column {
-        gap: 0;
-    }
+  .image-column {
+    gap: 0;
+  }
    
-    h2 {
-        display: flex;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
+  h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
 
-    h3 {
-        font-size: 1rem;
-    }
-    
-    p.bio {
-        margin: 0;
-    }
+  h3 {
+    font-size: 1rem;
+  }
 
-    ul.list {
-        font-size: .9rem;
-    }
+  p.bio {
+    margin: 0;
+  }
 
-
+  ul.list {
+    font-size: .9rem;
+  }
 
   main {
     width: 100%;
@@ -471,13 +449,12 @@ h3 {
   }
 }
 
-/* ========= Mobile (480px and below) ========= */
+/* --- Mobile (480px and below) --- */
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
     line-height: 1.5;
     padding: 0 3rem;
-    justify-content: center;
   }
 
   header {
@@ -488,7 +465,7 @@ h3 {
     display: block;
     cursor: pointer;
     position: relative;
-    z-index: 1001; /* ensure above nav */
+    z-index: 1001; 
     padding: 1rem;
   }
 
@@ -501,7 +478,6 @@ h3 {
   .close-icon {
     display: none;
   }
-
 
   header nav ul {
     gap: 0.5rem;
@@ -521,11 +497,10 @@ h3 {
     height: 100vh;
     display: none;
     width: 40%;
-    background: white;
+    background: #fff;
     z-index: 1000;
     padding: 2rem;
   }
-
 
   .nav-link.open {
     display: block;
@@ -581,10 +556,6 @@ h3 {
     padding-bottom: 0;
   }
 
-  /* .text-column {
-    align-items: center;
-  } */
-
   .about-section {
     margin-top: 1rem;
     padding: 1rem;
@@ -622,4 +593,3 @@ h3 {
     text-align: center;
   }
 }
-
