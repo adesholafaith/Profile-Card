@@ -1,76 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Profile Card</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Profile Card</title>
 </head>
 <body>
-    <div class="profile-flex">
-    <article data-testid="test-profile-card" aria-label="User profile card">
-        <div class="image-column" role="group" aria-labelledby="profile-card">
-            <figure>
-                <img src="PROFILE-PIC.jpg" alt="profile picture">
-            </figure>
-            <h2 data-testid="test-user-name" aria-label="User full name">Adeshola Faith</h2>
-        
-            <!-- Social links -->
-            <nav class="social-nav" aria-label="Social links" data-testid="test-user-social-links">
-                <ul>
-                    <li>
-                        <a href="https://x.com/_adesholafaith?s=21" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/adesholafaith" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">Github</a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com.in/adesholafaith/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-       
-        <div class="text-column" style="flex:1;">
-            <header class="profile-header" id="profile-heading">     
-                <div class="meta-row" aria-hidden="false">
-                    <!-- Time -->
-                    <div class="time-pill" role="status" aria-live="polite" data-testid="test-user-time" id="userTime"></div>
-                </div>
-                
-                <!-- Bio -->
-                <h3 id="about-heading">About</h3>
-                <p class="bio" data-testid="test-user-bio">
-                Frontend web developer passionate about building visually stunning 
-                and user-friendly websites. I enjoy turning wireframes into pixel-perfect, 
-                accessible interfaces and learning something new every day.
-                </p>
-            </header>
+  <header>
+    <nav class="nav-link" aria-label="Main navigation" data-testid="test-user-nav">
+      <ul data-testid="test-user-nav-list">
+        <li><a href="index.html" data-testid="test-user-home">Home</a></li>
+        <li><a href="about.html" target="_blank" rel="noopener noreferrer" data-testid="test-user-about-me">About Me</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener noreferrer" data-testid="test-user-contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          
-            <!-- Hobbies -->
-            <section class="list-block" aria-labelledby="hobbies-heading">
-                <h3 id="hobbies-heading">Hobbies</h3>
-                <ul class="list" data-testid="test-user-hobbies">
-                    <li>Reading</li>
-                    <li>Writing</li>
-                    <li>Creating content</li>
-                </ul>
+  <main id="main-content" data-testid="test-about-page" tabindex="-1">
+    <div class="profile-flex">
+      <article class="profile-card" data-testid="test-profile-card" aria-label="User profile card">
+        <!-- Left column: image + name + social -->
+        <aside class="image-column" aria-labelledby="profile-heading" role="region">
+          <figure>
+            <img src="PROFILE-PIC.jpg" alt="Profile photo of Adeshola Faith" />
+          </figure>
+
+          <h2 id="profile-heading" data-testid="test-user-name">Adeshola Faith</h2>
+
+          <nav class="social-nav" aria-label="Social links" data-testid="test-user-social-links">
+            <ul>
+              <li>
+                <a href="https://x.com/_adesholafaith?s=21" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/adesholafaith" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/adesholafaith/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Right column: profile details -->
+        <section class="text-column" aria-labelledby="about-heading" role="region">
+          <div class="meta-row" aria-hidden="false">
+            <!-- Time (updated by JS) -->
+            <div class="time-pill" role="status" aria-live="polite" data-testid="test-user-time" id="userTime"></div>
+          </div>
+
+          <header class="profile-header">
+            <h3 id="about-heading">About</h3>
+            <p class="bio" data-testid="test-user-bio">
+              Frontend web developer passionate about building visually appealing and user-friendly websites.
+              I enjoy turning wireframes into pixel-perfect, accessible interfaces and learning something new every day.
+            </p>
+          </header>
+
+          <section class="list-block" aria-labelledby="hobbies-heading">
+            <h3 id="hobbies-heading">Hobbies</h3>
+            <ul class="list" data-testid="test-user-hobbies">
+              <li>Reading</li>
+              <li>Writing</li>
+              <li>Creating content</li>
+            </ul>
           </section>
 
-            <!-- Dislikes -->
-            <section class="list-block" aria-labelledby="dislikes-heading">
-                <h3 id="dislikes-heading">Dislikes</h3>
-                <ul class="list" data-testid="test-user-dislikes">
-                    <li>Unclear communication</li>
-                    <li>Disorganized spaces</li>
-                    <li>Loud or chaotic environments</li>
-                </ul>
-            </section>
-        </div>
-    </article>
+          <section class="list-block" aria-labelledby="dislikes-heading">
+            <h3 id="dislikes-heading">Dislikes</h3>
+            <ul class="list" data-testid="test-user-dislikes">
+              <li>Unclear communication</li>
+              <li>Disorganized spaces</li>
+              <li>Loud or chaotic environments</li>
+            </ul>
+          </section>
+        </section>
+      </article>
     </div>
-    <script src="script.js"></script>
-</body>
+  </main>
 
+  <script src="script.js" defer></script>
+</body>
 </html>
