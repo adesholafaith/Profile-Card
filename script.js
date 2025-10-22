@@ -16,16 +16,30 @@ const setupTime = () => {
   return id;
 };
 
-const navToggle = document.querySelector('.nav-toggle');
+const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav-link');
 const openIcon = document.querySelector('.open-icon');
 const closeIcon = document.querySelector('.close-icon');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  openIcon.style.display = isOpen ? 'none' : 'block';
-  closeIcon.style.display = isOpen ? 'block' : 'none';
-});
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    const isOpen = nav.classList.contains('open');
+    nav.style.display = isOpen ? 'block' : 'none';
+    openIcon.style.display = isOpen ? 'none' : 'inline-block';
+    closeIcon.style.display = isOpen ? 'inline-block' : 'none';
+  });
+
+  window.addEventListener('scroll', () => {
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      nav.style.display = 'none';
+      openIcon.style.display = 'inline-block';
+      closeIcon.style.display = 'none';
+    }
+  });
+}
+
 
 
 const socialFocusAnnounce = () => {
@@ -185,3 +199,4 @@ document.addEventListener('DOMContentLoaded', () => {
   socialFocusAnnounce();
   setupContactForm();
 });
+
