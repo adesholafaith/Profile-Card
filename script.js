@@ -1,7 +1,7 @@
 
 const setupTime = () => {
   const el = document.getElementById('userTime');
-  if (!el) return null; // nothing to do
+  if (!el) return null;
 
   const tick = () => {
     // show time in milliseconds
@@ -15,6 +15,18 @@ const setupTime = () => {
   window.addEventListener('beforeunload', () => clearInterval(id));
   return id;
 };
+
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav-link');
+const openIcon = document.querySelector('.open-icon');
+const closeIcon = document.querySelector('.close-icon');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  openIcon.style.display = isOpen ? 'none' : 'block';
+  closeIcon.style.display = isOpen ? 'block' : 'none';
+});
+
 
 const socialFocusAnnounce = () => {
   const nodes = Array.from(document.querySelectorAll('[data-testid^="test-user-social-"]'));

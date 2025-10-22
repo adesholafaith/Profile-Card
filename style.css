@@ -86,6 +86,11 @@ header {
   width: 100%;
   margin-bottom: 1rem;
 }
+
+.nav-toggle {
+  display: none;
+}
+
 .nav-link {
   display: flex;
   justify-content: flex-end;
@@ -402,7 +407,7 @@ h3 {
   }
 
 
-   article[data-testid="test-profile-card"] {
+   .profile-card {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -434,10 +439,10 @@ h3 {
     }
 
     ul.list {
-        font-size: 1rem;
+        font-size: .9rem;
     }
 
-    
+
 
   main {
     width: 100%;
@@ -474,6 +479,29 @@ h3 {
     padding: 0 3rem;
   }
 
+  header {
+    margin: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* ensure above nav */
+    padding: 1rem;
+  }
+
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+
   header nav ul {
     gap: 0.5rem;
   }
@@ -482,6 +510,45 @@ h3 {
     display: block;
     font-size: 0.95rem;
     padding: 0.5rem 0;
+  }
+
+  .nav-link {
+    margin: .5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: none;
+    width: 40%;
+    background: white;
+    z-index: 1000;
+    padding: 2rem;
+  }
+
+
+  .nav-link.open {
+    display: block;
+    margin-top: 0;
+  }
+
+  .nav-link ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .nav-link li {
+    margin-top: 1rem;
+    display: inline;
+  }
+
+  .nav-link li:first-child {
+    margin-top: 2rem;
+  }
+
+  .nav-link a {
+    padding: 0;
   }
 
   .about-main {
@@ -509,6 +576,8 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    padding: 20px;
+    padding-bottom: 0;
   }
 
   /* .text-column {
