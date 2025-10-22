@@ -1,21 +1,17 @@
-// script.js — cleaned, safe, and readable
-// All top-level functions are arrow functions and initialization happens on DOMContentLoaded.
 
 const setupTime = () => {
   const el = document.getElementById('userTime');
   if (!el) return null; // nothing to do
 
   const tick = () => {
-    // show human friendly time (you can switch back to ms if you prefer)
-    el.textContent = `Current time: ${new Date().toLocaleTimeString()}`;
+    // show time in milliseconds
+    el.textContent = `Current time (ms): ${Date.now()}`;
   };
 
   tick();
   const id = setInterval(tick, 500);
-  // store so it can be cleared for debugging if needed
   el.dataset._timeInterval = String(id);
 
-  // clear on unload to be tidy
   window.addEventListener('beforeunload', () => clearInterval(id));
   return id;
 };
