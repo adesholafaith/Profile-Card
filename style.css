@@ -477,6 +477,7 @@ h3 {
     font-size: 0.9rem;
     line-height: 1.5;
     padding: 0 3rem;
+    justify-content: center;
   }
 
   header {
@@ -621,3 +622,4 @@ h3 {
     text-align: center;
   }
 }
+
